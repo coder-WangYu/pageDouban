@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录/注册</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/loginframe.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 短信登录/注册，密码登录 -->
+        <div id="log-pwd" class="login">
+            <!-- 切换菜单 -->
+            <div class="switch-menu clearfix">
+                <span id="log-item1" class="left selected">
+                    短信登录/注册
+                </span>
+                <span id="log-item2" class="right">
+                    密码登录
+                </span>
+            </div>
+            <!-- 登录、注册表单 -->
+            <form class="form" action="">
+                <!-- 短信登录/注册表单 -->
+                <div id="news-area" class="">
+                    <div class="form-item">
+                        <p class="txt">
+                                请仔细阅读
+                                <a href="" target="_blank">豆瓣使用协议、隐私政策</a>
+                        </p>
+                    </div>
+                    <div class="form-item">
+                        <input id="phone" type="text" class="more-padding" placeholder="手机号" value="">
+                        <div class="country-code">
+                            <div id="number" class="number">+86</div>
+                            <div id="choose-area" class="choose-area hidden">
+                                <div class="center">
+                                    <div class="title">
+                                        <h1>选择国际区号</h1>
+                                    </div>
+                                    <ul id="country-num">
+                                        <li class="clearfix selected"><span class="left">中国</span><span class="right">+86</span>
+                                        </li>
+                                        <li class="clearfix"><span class="left">国家名2</span><span class="right">+82</span></li>
+                                        <li class="clearfix"><span class="left">国家名3</span><span class="right">+83</span></li>
+                                        <li class="clearfix"><span class="left">国家名4</span><span class="right">+84</span></li>
+                                        <li class="clearfix"><span class="left">国家名5</span><span class="right">+85</span></li>
+                                        <li class="clearfix"><span class="left">国家名6</span><span class="right">+86</span></li>
+                                        <li class="clearfix"><span class="left">国家名7</span><span class="right">+87</span></li>
+                                        <li class="clearfix"><span class="left">国家名8</span><span class="right">+88</span></li>
+                                        <li class="clearfix"><span class="left">国家名9</span><span class="right">+89</span></li>
+                                        <li class="clearfix"><span class="left">国家名10</span><span class="right">+810</span></li>
+                                    </ul>
+                                    <div id="close-choose-area">
+                                        <i class="iconfont icon-cuowu"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input id="check" type="text" placeholder="验证码" value="">
+                        <a class="ab-right">获取验证码</a>
+                    </div>
+                    <div class="form-item">
+                        <button disabled="" id="log-btn" class="btn">登录豆瓣</button>
+                    </div>
+                    <div class="form-item tip clearfix">
+                        <label class="left">
+                            <input type="checkbox">
+                            下次自动登录
+                        </label>
+                        <span class="right">
+                            <a href="">收不到验证码</a>
+                        </span>
+                    </div>
+                </div>
+                <!-- 密码登录 -->
+                <div id="pwd-area" class="hidden">
+                    <div class="form-item tip clearfix">
+                        <a href="" class="right">找回密码</a>
+                    </div>
+                    <div class="form-item">
+                        <input id="phone-or-email" type="text" placeholder="手机号 / 邮箱" value="">
+                    </div>
+                    <div class="form-item" id="pwd">
+                        <input id="phone-email-pwd" type="password" class="pwd" placeholder="密码" value="">
+                    </div>
+                    <div class="form-item">
+                        <button disabled id="pwd-log-btn" class="btn">登录豆瓣</button>
+                    </div>
+                    <div class="form-item tip clearfix">
+                        <label class="left">
+                            <input type="checkbox">
+                            下次自动登录
+                        </label>
+                        <span class="right">
+                            <a href="">海外手机登录</a>
+                        </span>
+                    </div>
+                </div>
+            </form>
+            <!-- 第三方接口 -->
+            <div class="bottom">
+                <span class="msg">
+                    第三方登录：
+                </span>
+                <i class="iconfont icon-weixin icon1"></i>
+                <i class="iconfont icon-weibo icon2"></i>
+            </div>
+        </div>
+
+        <!-- 扫码下载 -->
+        <div class="qr-code hidden">
+            <div class="title">
+                <h1>二维码登录</h1>
+            </div>
+            <div class="code">
+                <img src="img/qr-login.png" alt="">
+            </div>
+            <div class="tip">
+                <p>请打开豆瓣客户端扫一扫</p>
+            </div>
+        </div>
+
+        <!-- 扫码登录 -->
+        <div class="change">
+            <!-- 通过JS进行样式的切换处理 -->
+            <div id="icon-qr" class="">
+                <i class="icon icon-qr"></i>
+            </div>
+            <div id="icon-pc" class="hidden">
+                <i class="icon icon-pc"></i>
+            </div>
+        </div>
+
+        <div id="log-pointer" class="pointer hidden">
+            <p id="p-pointer" class="">扫码登录</p>
+            <p id="p-pwd" class="hidden">密码登录</p>
+        </div>
+
+        <div id="pointer" class="hidden">
+            <img src="img/qr-login.png" alt="">
+            <p>请打开豆瓣APP 扫码登录</p>
+        </div>
+    </div>
+
+    <script src="js/tools.js"></script>
+    <script src="js/loginiframe.js"></script>
+</body>
+</html>
